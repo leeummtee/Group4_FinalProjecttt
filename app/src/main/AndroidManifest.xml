@@ -27,6 +27,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GoalsActivity" />
+        <activity android:name=".ProfileStats"></activity>
+
+        <activity android:name=".TutorialOne"></activity>
+        <activity android:name=".TutorialTwo"></activity>
+        <activity android:name=".TutorialThree"></activity>
+        <activity android:name=".TutorialFour"></activity>
     </application>
 
 </manifest>
