@@ -38,17 +38,17 @@ public class GoalsActivity extends AppCompatActivity {
 
 
         Toast.makeText(this, "Goals saved. Heading to the Tracking page.", Toast.LENGTH_LONG).show();
-        Intent intent= new Intent(this, com.example.finalproject_group4.MainActivity.class);
+        Intent intent= new Intent(this, com.example.group4_finalproject_iat359.MainActivity.class);
         startActivity(intent);
     }
 
     public void goToHome(View v) {
-        Intent intent = new Intent(this, com.example.finalproject_group4.MainActivity.class);
+        Intent intent = new Intent(this, com.example.group4_finalproject_iat359.MainActivity.class);
         startActivity(intent);
     }
 
     public void goToProfile(View v) {
-        Intent intent = new Intent(this, com.example.finalproject_group4.ProfileStats.class);
+        Intent intent = new Intent(this, com.example.group4_finalproject_iat359.ProfileStats.class);
         startActivity(intent);
     }
 

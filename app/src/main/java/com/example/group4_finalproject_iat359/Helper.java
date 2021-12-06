@@ -11,17 +11,17 @@ public class Helper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE =
             "CREATE TABLE "+
-                    com.example.finalproject_group4.Constants.TABLE_NAME + " (" +
-                    com.example.finalproject_group4.Constants.UID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    com.example.finalproject_group4.Constants.KM + " TEXT, " +
-                    com.example.finalproject_group4.Constants.KCAL + " TEXT, " +
-                    com.example.finalproject_group4.Constants.TIME + " TEXT, " +
-                    com.example.finalproject_group4.Constants.STEPS + " TEXT);" ;
+                    com.example.group4_finalproject_iat359.Constants.TABLE_NAME + " (" +
+                    com.example.group4_finalproject_iat359.Constants.UID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    com.example.group4_finalproject_iat359.Constants.KM + " TEXT, " +
+                    com.example.group4_finalproject_iat359.Constants.KCAL + " TEXT, " +
+                    com.example.group4_finalproject_iat359.Constants.TIME + " TEXT, " +
+                    com.example.group4_finalproject_iat359.Constants.STEPS + " TEXT);" ;
 
-    private static final String DROP_TABLE = "DROP TABLE IF EXISTS " + com.example.finalproject_group4.Constants.TABLE_NAME;
+    private static final String DROP_TABLE = "DROP TABLE IF EXISTS " + com.example.group4_finalproject_iat359.Constants.TABLE_NAME;
 
     public Helper(Context context) {
-        super(context, com.example.finalproject_group4.Constants.DATABASE_NAME,null, com.example.finalproject_group4.Constants.DATABASE_VERSION);
+        super(context, com.example.group4_finalproject_iat359.Constants.DATABASE_NAME,null, com.example.group4_finalproject_iat359.Constants.DATABASE_VERSION);
         this.context = context;
     }
 

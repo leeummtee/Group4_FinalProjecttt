@@ -15,7 +15,7 @@ public class TutorialTwo extends AppCompatActivity {
     }
 
     public void tutButton (View view) {
-        Intent intent= new Intent(this, com.example.finalproject_group4.TutorialThree.class);
+        Intent intent= new Intent(this, com.example.group4_finalproject_iat359.TutorialThree.class);
         startActivity(intent);
     }
 }

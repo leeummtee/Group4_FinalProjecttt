@@ -21,8 +21,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.finalproject_group4.directionhelpers.FetchURL;
-import com.example.finalproject_group4.directionhelpers.TaskLoadedCallback;
+import com.example.group4_finalproject_iat359.directionhelpers.FetchURL;
+import com.example.group4_finalproject_iat359.directionhelpers.TaskLoadedCallback;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -32,6 +32,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ProgressBar progressBar;
     int i = 0;
     public static final String DEFAULT = "not available";
-    com.example.finalproject_group4.MyDatabase db;
+    com.example.group4_finalproject_iat359.MyDatabase db;
     private GoogleMap mMap;
 //    private ActivityMapsBinding binding;
     private boolean isMoving = false;
@@ -345,7 +346,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void goToProfile(View view) {
-        Intent intent = new Intent(this, com.example.finalproject_group4.ProfileStats.class);
+        Intent intent = new Intent(this, com.example.group4_finalproject_iat359.ProfileStats.class);
         startActivity(intent);
     }
 

@@ -42,7 +42,7 @@ public class LoginActivity extends Activity {
         if (registeredUsername.equals(loginUsernameEditText.getText().toString()) &&
                 registeredPassword.equals(loginPasswordEditText.getText().toString()))
         {
-            Intent intent= new Intent(this, com.example.finalproject_group4.TutorialOne.class);
+            Intent intent= new Intent(this, com.example.group4_finalproject_iat359.TutorialOne.class);
             startActivity(intent);
         }
         else
@@ -54,7 +54,7 @@ public class LoginActivity extends Activity {
 
     public void backToSignUp(View view){
         Toast.makeText(this, "backtoActivity1", Toast.LENGTH_LONG).show();
-        Intent intent= new Intent(this, com.example.finalproject_group4.Register.class);
+        Intent intent= new Intent(this, com.example.group4_finalproject_iat359.Register.class);
         startActivity(intent);
     }
 
