@@ -38,19 +38,6 @@
     <!--  backgroundTint learned from  https://stackoverflow.com/questions/21480398/edittext-underline-below-text-property-->
 
     <EditText
-        android:id="@+id/stepGoalEditText"
-        android:layout_width="244dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.329"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.378"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
         android:id="@+id/editText"
         android:layout_width="244dp"
         android:layout_height="48dp"
@@ -204,8 +191,21 @@
         app:layout_constraintVertical_bias="0.228"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <EditText
+        android:id="@+id/stepGoalEditText"
+        android:layout_width="244dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.323"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.378"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/setGoalsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Set Goals"

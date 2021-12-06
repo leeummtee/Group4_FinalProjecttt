@@ -3,12 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable-v24/circle.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/drawable-v24/active_nav.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable-v24/circle.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/layout/activity_dash_board.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.240625" />
-        <entry key="app/src/main/res/layout/goals.xml" value="0.1875" />
-        <entry key="app/src/main/res/layout/profile_stats.xml" value="0.24728260869565216" />
-        <entry key="app/src/main/res/layout/tracking_page.xml" value="0.24728260869565216" />
+        <entry key="app/src/main/res/layout/goals.xml" value="0.38577332721954044" />
+        <entry key="app/src/main/res/layout/tracking_page.xml" value="0.29795070628759796" />
       </map>
     </option>
   </component>

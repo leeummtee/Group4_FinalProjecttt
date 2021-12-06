@@ -1,7 +1,9 @@
 package com.example.group4_finalproject_iat359;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -9,20 +11,27 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.group4_finalproject_iat359.directionhelpers.FetchURL;
 import com.example.group4_finalproject_iat359.directionhelpers.TaskLoadedCallback;
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -32,10 +41,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.List;
 
 //tracking page, which includes the step counter and map
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener,
@@ -52,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
 //    private ActivityMapsBinding binding;
     private boolean isMoving = false;
+    private FusedLocationProviderClient fusedLocationClient;
+
 
     private static final double
             VANCOUVER_LAT =  49.18953323364258,
@@ -161,10 +175,50 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         place1 = new MarkerOptions().position(new LatLng(VANCOUVER_LAT, VANCOUVER_LNG)).title("Location 1");
         place2 = new MarkerOptions().position(new LatLng(DESTINATION_LAT, DESTINATION_LNG)).title("Location 2");
 
+        //draw route
         String url = getUrl(place1.getPosition(), place2.getPosition(), "driving");
         new FetchURL(MainActivity.this).execute(url, "driving");
 
 
+    }
+
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 1;
+
+    public boolean checkLocationPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.title_location_permission)
+                        .setMessage(R.string.text_location_permission)
+                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                //Prompt the user once explanation has been shown
+                                ActivityCompat.requestPermissions(MainActivity.this,
+                                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                                        MY_PERMISSIONS_REQUEST_LOCATION);
+                            }
+                        })
+                        .create()
+                        .show();
+
+
+            } else {
+                // No explanation needed, we can request the permission.
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_LOCATION);
+            }
+            return false;
+        } else {
+            return true;
+        }
     }
 
     @Override
@@ -173,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.addMarker(place1);
         mMap.addMarker(place2);
 
-//        checkLocationPermission();
+        checkLocationPermission();
 
         gotoLocation(VANCOUVER_LAT, VANCOUVER_LNG, 15);
 
@@ -218,45 +272,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.moveCamera(update);
     }
 
-    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 1;
-
-//    public boolean checkLocationPermission() {
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//
-//            // Should we show an explanation?
-//            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
-//
-//                // Show an explanation to the user *asynchronously* -- don't block
-//                // this thread waiting for the user's response! After the user
-//                // sees the explanation, try again to request the permission.
-//                new AlertDialog.Builder(this)
-//                        .setTitle(R.string.title_location_permission)
-//                        .setMessage(R.string.text_location_permission)
-//                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialogInterface, int i) {
-//                                //Prompt the user once explanation has been shown
-//                                ActivityCompat.requestPermissions(MainActivity.this,
-//                                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-//                                        MY_PERMISSIONS_REQUEST_LOCATION);
-//                            }
-//                        })
-//                        .create()
-//                        .show();
-//
-//
-//            } else {
-//                // No explanation needed, we can request the permission.
-//                ActivityCompat.requestPermissions(this,
-//                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-//                        MY_PERMISSIONS_REQUEST_LOCATION);
-//            }
-//            return false;
-//        } else {
-//            return true;
-//        }
-//    }
-
 //    public void geolocate(View v) {
 //        Geocoder myGeocoder = new Geocoder(this);
 //
@@ -282,10 +297,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //                double lng = add.getLongitude();
 //                gotoLocation(lat, lng, 15);
 //
-////                MarkerOptions options = new MarkerOptions()
-////                        .title(locality)
-////                        .position(new LatLng(lat, lng));
-////                myMap.addMarker(options);
+//                MarkerOptions options = new MarkerOptions()
+//                        .title(locality)
+//                        .position(new LatLng(lat, lng));
+//                mMap.addMarker(options);
 //            }
 //        }
 //
@@ -310,10 +325,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //                double lng = add.getLongitude();
 //                gotoLocation(lat, lng, 15);
 //
-////                MarkerOptions options = new MarkerOptions()
-////                        .title(locality)
-////                        .position(new LatLng(lat, lng));
-////                myMap.addMarker(options);
+//                MarkerOptions options = new MarkerOptions()
+//                        .title(locality)
+//                        .position(new LatLng(lat, lng));
+//                myMap.addMarker(options);
 //            }
 //        }
 //    }
@@ -371,6 +386,36 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //        }
     }
 
+    public void showCurrentLocation(MenuItem item) {
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //  public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
+                        // Got last known location. In some rare situations this can be null.
+
+                        LatLng latlng = new LatLng(location.getLatitude(), location.getLongitude());
+                        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(latlng, 15);
+                        mMap.animateCamera(update);
+
+
+                        if (location != null) {
+                            // Logic to handle location object
+                        }
+                    }
+                });
+    }
+
     public void calculateDistance(Integer g) {
 
     }
@@ -384,4 +429,26 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMyLocationClick(@NonNull Location location) {
 
     }
+
+//    public void endTrip (View view)
+//    {
+//        String name = plantName.getText().toString();
+//        String type = plantType.getText().toString();
+//        String plantLocation = location.getText().toString();
+//        String latinName = plantLatinName.getText().toString();
+//        Toast.makeText(this, name +  " " + type + " " + plantLocation + " " + latinName, Toast.LENGTH_SHORT).show();
+//        long id = db.insertData(name, type, plantLocation, latinName);
+//        if (id < 0)
+//        {
+//            Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show();
+//        }
+//        else
+//        {
+//            Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
+//        }
+////        plantName.setText("");
+////        plantType.setText("");
+////        location.setText("");
+////        plantLatinName.setText("");
+//    }
 }
