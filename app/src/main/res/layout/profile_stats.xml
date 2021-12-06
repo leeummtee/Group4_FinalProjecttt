@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background = "@color/black">
 
     <View
         android:id="@+id/rectangle_4"
@@ -25,7 +26,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
         android:text="Hello there"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

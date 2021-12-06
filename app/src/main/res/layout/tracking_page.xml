@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/trackingView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
     <!--    https://www.youtube.com/watch?v=YsHHXg1vbcc-->
 
@@ -44,7 +45,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
         android:text="TextView"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +60,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
         android:text="1.14"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,6 +78,7 @@
         android:gravity="center"
         android:text="cal"
         android:textSize="20dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.801"
@@ -92,7 +94,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
         android:text="2.75"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,6 +111,7 @@
         android:fontFamily="@font/montserrat_regular"
         android:gravity="center"
         android:text="m"
+        android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,23 +121,24 @@
         app:layout_constraintVertical_bias="0.527"
         tools:ignore="MissingConstraints" />
 
+    <!--    navigation related material learned from https://www.youtube.com/watch?v=JjfSjMs0ImQ&ab_channel=AndroidCoding-->
+
     <TextView
         android:id="@+id/textView8"
         android:layout_width="93dp"
         android:layout_height="45dp"
-        android:fontFamily="@font/montserrat_thin"
+        android:fontFamily="@font/montserrat_light"
         android:gravity="center"
         android:text="steps"
+        android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.275"
         tools:ignore="MissingConstraints" />
 
-    <!--    navigation related material learned from https://www.youtube.com/watch?v=JjfSjMs0ImQ&ab_channel=AndroidCoding-->
 
     <TextView
         android:id="@+id/dateText"
@@ -143,14 +147,13 @@
         android:fontFamily="@font/montserrat_regular"
         android:gravity="center"
         android:text="Hello World!"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
-
 
     <ImageButton
         android:id="@+id/goToTrackingPageButton"
