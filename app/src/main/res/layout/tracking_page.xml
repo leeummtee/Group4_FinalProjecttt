@@ -64,10 +64,10 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472"
+        app:layout_constraintVertical_bias="0.447"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -77,14 +77,14 @@
         android:fontFamily="@font/montserrat_regular"
         android:gravity="center"
         android:text="cal"
-        android:textSize="20dp"
         android:textColor="@color/white"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.801"
+        app:layout_constraintHorizontal_bias="0.804"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529"
+        app:layout_constraintVertical_bias="0.504"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -101,7 +101,7 @@
         app:layout_constraintHorizontal_bias="0.211"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472"
+        app:layout_constraintVertical_bias="0.447"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -118,7 +118,7 @@
         app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527"
+        app:layout_constraintVertical_bias="0.502"
         tools:ignore="MissingConstraints" />
 
     <!--    navigation related material learned from https://www.youtube.com/watch?v=JjfSjMs0ImQ&ab_channel=AndroidCoding-->
