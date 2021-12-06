@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//pew pew test test
 public class GoalsActivity extends AppCompatActivity {
     private Integer goal;
     private EditText stepGoalEditText, destinationEditText;
