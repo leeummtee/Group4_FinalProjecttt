@@ -8,12 +8,17 @@
         <entry key="app/src/main/res/drawable-v24/ic_checklist.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/drawable-v24/ic_goals_nonactive.xml" value="0.20364583333333333" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable-v24/ic_walking_nonactive.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/drawable/ic_baseline_brightness_active.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_dash_board.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.240625" />
         <entry key="app/src/main/res/layout/goals.xml" value="0.25" />
         <entry key="app/src/main/res/layout/sign_up.xml" value="0.23505434782608695" />
         <entry key="app/src/main/res/layout/tracking_page.xml" value="0.29795070628759796" />
         <entry key="app/src/main/res/layout/tutorial_1.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/tutorial_2.xml" value="0.23505434782608695" />
+        <entry key="app/src/main/res/layout/tutorial_3.xml" value="0.23505434782608695" />
+        <entry key="app/src/main/res/layout/tutorial_4.xml" value="0.23505434782608695" />
       </map>
     </option>
   </component>
