@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.List;
 
-//pew pew test test
+//goals page
 public class GoalsActivity extends AppCompatActivity {
     private Integer goal;
     private EditText stepGoalEditText, destinationEditText;
@@ -39,8 +39,6 @@ public class GoalsActivity extends AppCompatActivity {
         stepGoalEditText = (EditText)findViewById(R.id.stepGoalEditText);
         destinationEditText = (EditText)findViewById(R.id.destinationEditText);
         db = new MyDatabase(this);
-
-
     }
 
     //searching for destination
@@ -171,16 +169,16 @@ public class GoalsActivity extends AppCompatActivity {
 //        String type = plantType.getText().toString();
 //        String plantLocation = location.getText().toString();
 //        String latinName = plantLatinName.getText().toString();
-        Toast.makeText(this, goal, Toast.LENGTH_SHORT).show();
-        long id = db.insertData(goal);
-        if (id < 0)
-        {
-            Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
-        }
+//        Toast.makeText(this, goal, Toast.LENGTH_SHORT).show();
+//        long id = db.insertData(goal);
+//        if (id < 0)
+//        {
+//            Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show();
+//        }
+//        else
+//        {
+//            Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
+//        }
 
 //        stepGoalEditText.setText("");
 //        plantName.setText("");
@@ -188,9 +186,9 @@ public class GoalsActivity extends AppCompatActivity {
 //        location.setText("");
 //        plantLatinName.setText("");
 
-//        Toast.makeText(this, "Goals saved. Heading to the Tracking page.", Toast.LENGTH_LONG).show();
-//        Intent intent= new Intent(this, MainActivity.class);
-//        startActivity(intent);
+        Toast.makeText(this, "Goals saved. Heading to the Tracking page.", Toast.LENGTH_LONG).show();
+        Intent intent= new Intent(this, MainActivity.class);
+        startActivity(intent);
 
     }
 

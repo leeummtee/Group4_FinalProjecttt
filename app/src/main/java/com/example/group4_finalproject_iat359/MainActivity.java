@@ -303,7 +303,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //                mMap.addMarker(options);
 //            }
 //        }
-//
+
 //        if (v.getId() == R.id.latLngButton){
 //            latString = latEntry.getText().toString();
 //            lngString = lngEntry.getText().toString();
@@ -328,17 +328,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //                MarkerOptions options = new MarkerOptions()
 //                        .title(locality)
 //                        .position(new LatLng(lat, lng));
-//                myMap.addMarker(options);
+//                mMap.addMarker(options);
 //            }
 //        }
-//    }
+    }
 
     private void hideSoftKeyboard(View v) {
         InputMethodManager imm =
                 (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
-
 
     protected void onPause() {
         super.onPause();
@@ -430,8 +429,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
-//    public void endTrip (View view)
-//    {
+    public void endTrip (View view)
+    {
 //        String name = textViewStepCounter.getText().toString();
 //        String stepGoal = plantName.getText().toString();
 //        String type = plantType.getText().toString();
@@ -451,5 +450,5 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //        plantType.setText("");
 //        location.setText("");
 //        plantLatinName.setText("");
-//    }
+    }
 }

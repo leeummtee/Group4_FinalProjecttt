@@ -3,6 +3,7 @@ package com.example.group4_finalproject_iat359;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -63,5 +64,11 @@ public class ProfileStats extends MainActivity implements AdapterView.OnItemClic
         TextView kmTextView = (TextView) view.findViewById(R.id.kmEntry);
         TextView kcalTextView = (TextView) view.findViewById(R.id.kcalEntry);
         Toast.makeText(this, "row " + (1+position) + ":  " + stepsTextView.getText() +" "+kmTextView.getText() + " " + kcalTextView.getText(), Toast.LENGTH_LONG).show();
+    }
+
+    public void profileButton(View view) {
+        Uri location = Uri.parse("https://www.youtube.com/watch?v=lm2bTy_Upnw"); // z param is zoom level
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+        startActivity(mapIntent);
     }
 }

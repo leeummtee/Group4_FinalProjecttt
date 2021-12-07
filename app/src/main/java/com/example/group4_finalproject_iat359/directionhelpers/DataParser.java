@@ -11,7 +11,6 @@ import java.util.HashMap;
 import java.util.List;
 
 /** code from https://www.youtube.com/watch?v=wRDLjUK8nyU&start=475 */
-
 public class DataParser {
     public List<List<HashMap<String, String>>> parse(JSONObject jObject) {
 

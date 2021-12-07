@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+//from lab 6 demo code
 public class QueryRecyclerView extends Activity {
     RecyclerView queryRecycler;
     Adapter queryAdapter;
