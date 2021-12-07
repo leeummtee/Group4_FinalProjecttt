@@ -118,7 +118,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //        MapFragment mapFragment = (MapFragment) getFragmentManager()
 //                .findFragmentById(R.id.mapView);
         mapFragment.getMapAsync(this);
-//        mapIntent();
 
         //checking permissions
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
@@ -134,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
 
-        //step counter
+        //step counter reference from https://www.youtube.com/watch?v=o-qpVefrfVA
         SensorEventListener stepDetector = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
@@ -151,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     MagnitudePrevious = Magnitude;
 
                     //if there is a significant amount of change
-                    if (MagnitudeDelta > 1) {
+                    if (MagnitudeDelta > 6) {
                         stepCount++;    //increase the step counter
                         progressBar.setProgress(stepCount); //set the progress bar's progress based on steps
                     }
