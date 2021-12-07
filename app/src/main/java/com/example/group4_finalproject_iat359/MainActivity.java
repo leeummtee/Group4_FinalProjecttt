@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     MagnitudePrevious = Magnitude;
 
                     //if there is a significant amount of change
-                    if (MagnitudeDelta > 6) {
+                    if (MagnitudeDelta > 8) {
                         stepCount++;    //increase the step counter
                         progressBar.setProgress(stepCount); //set the progress bar's progress based on steps
                     }
