@@ -20,7 +20,6 @@ public class MyDatabase {
 //        ContentValues contentValues = new ContentValues();
 //        contentValues.put(Constants.KM, km);
 //        contentValues.put(Constants.KCAL, kcal);
-//        contentValues.put(Constants.TIME, time);
 //        contentValues.put(Constants.STEPS, steps);
 //        long id = db.insert(Constants.TABLE_NAME, null, contentValues);
 //        return id;
@@ -32,7 +31,6 @@ public class MyDatabase {
         ContentValues contentValues = new ContentValues();
 //        contentValues.put(Constants.KM, km);
 //        contentValues.put(Constants.KCAL, kcal);
-//        contentValues.put(Constants.TIME, time);
         contentValues.put(Constants.STEPS, steps);
         long id = db.insert(Constants.TABLE_NAME, null, contentValues);
         return id;
@@ -41,7 +39,7 @@ public class MyDatabase {
     public Cursor getData()
     {
         SQLiteDatabase db = helper.getWritableDatabase();
-        String[] columns = {Constants.UID, Constants.KM, Constants.KCAL, Constants.TIME, Constants.STEPS};
+        String[] columns = {Constants.UID, Constants.KM, Constants.KCAL, Constants.STEPS};
         Cursor cursor = db.query(Constants.TABLE_NAME, columns, null, null, null, null, null);
         return cursor;
     }
@@ -50,7 +48,7 @@ public class MyDatabase {
     {
         //select plants from database of specified type from user
         SQLiteDatabase db = helper.getWritableDatabase();
-        String[] columns = {Constants.KM, Constants.KCAL, Constants.TIME, Constants.STEPS};
+        String[] columns = {Constants.KM, Constants.KCAL, Constants.STEPS};
 
         String selection = Constants.STEPS + "='" +type+ "'";  //Constants.TYPE = 'type'
         Cursor cursor = db.query(Constants.TABLE_NAME, columns, selection, null, null, null, null);
@@ -59,13 +57,11 @@ public class MyDatabase {
         while (cursor.moveToNext()) {
             int index1 = cursor.getColumnIndex(Constants.KM);
             int index2 = cursor.getColumnIndex(Constants.KCAL);
-            int index3 = cursor.getColumnIndex(Constants.TIME);
-            int index4 = cursor.getColumnIndex(Constants.STEPS);
+            int index3 = cursor.getColumnIndex(Constants.STEPS);
             String routeKm = cursor.getString(index1);
             String routeKcal = cursor.getString(index2);
-            String routeTime = cursor.getString(index3);
-            String routeSteps = cursor.getString(index4);
-            buffer.append(routeKm + " " + routeKcal + " " + routeTime + " " + routeSteps + "\n");
+            String routeSteps = cursor.getString(index3);
+            buffer.append(routeKm + " " + routeKcal + " " +" " + routeSteps + "\n");
         }
         return buffer.toString();
     }

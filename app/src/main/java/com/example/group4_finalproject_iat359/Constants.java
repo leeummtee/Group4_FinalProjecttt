@@ -8,7 +8,6 @@ public class Constants {
     public static final String UID = "_id";
     public static final String KM = "km";
     public static final String KCAL = "kcal";
-    public static final String TIME = "time";
     public static final String STEPS = "steps";
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
 }

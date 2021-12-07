@@ -20,7 +20,6 @@ public class Database {
         ContentValues contentValues = new ContentValues();
         contentValues.put(com.example.group4_finalproject_iat359.Constants.KM, km);
         contentValues.put(com.example.group4_finalproject_iat359.Constants.KCAL, kcal);
-        contentValues.put(com.example.group4_finalproject_iat359.Constants.TIME, time);
         contentValues.put(com.example.group4_finalproject_iat359.Constants.STEPS, steps);
         long id = db.insert(com.example.group4_finalproject_iat359.Constants.TABLE_NAME, null, contentValues);
         return id;
@@ -28,7 +27,7 @@ public class Database {
 
     public Cursor getData() {
         SQLiteDatabase db = helper.getWritableDatabase();
-        String[] columns = {com.example.group4_finalproject_iat359.Constants.UID, com.example.group4_finalproject_iat359.Constants.KM, com.example.group4_finalproject_iat359.Constants.KCAL, com.example.group4_finalproject_iat359.Constants.TIME, com.example.group4_finalproject_iat359.Constants.STEPS};
+        String[] columns = {com.example.group4_finalproject_iat359.Constants.UID, com.example.group4_finalproject_iat359.Constants.KM, com.example.group4_finalproject_iat359.Constants.KCAL, com.example.group4_finalproject_iat359.Constants.STEPS};
         Cursor cursor = db.query(com.example.group4_finalproject_iat359.Constants.TABLE_NAME, columns, null, null, null, null, null);
         return cursor;
     }
@@ -37,7 +36,7 @@ public class Database {
         //select data from database based on steps
         // CAN CHANGE TO SOMETHING ELSE IF NEEDED
         SQLiteDatabase db = helper.getWritableDatabase();
-        String[] columns = {com.example.group4_finalproject_iat359.Constants.KM, com.example.group4_finalproject_iat359.Constants.KCAL, com.example.group4_finalproject_iat359.Constants.TIME, com.example.group4_finalproject_iat359.Constants.STEPS};
+        String[] columns = {com.example.group4_finalproject_iat359.Constants.KM, com.example.group4_finalproject_iat359.Constants.KCAL, com.example.group4_finalproject_iat359.Constants.STEPS};
 
         String selection = com.example.group4_finalproject_iat359.Constants.STEPS + "='" + data + "'"; // Constants.STEPS = 'steps';
         Cursor cursor = db.query(com.example.group4_finalproject_iat359.Constants.TABLE_NAME, columns, selection, null, null, null, null);
@@ -46,15 +45,13 @@ public class Database {
         while (cursor.moveToNext()){
             int index1 = cursor.getColumnIndex(com.example.group4_finalproject_iat359.Constants.KM);
             int index2 = cursor.getColumnIndex(com.example.group4_finalproject_iat359.Constants.KCAL);
-            int index3 = cursor.getColumnIndex(com.example.group4_finalproject_iat359.Constants.TIME);
-            int index4 = cursor.getColumnIndex(com.example.group4_finalproject_iat359.Constants.STEPS);
+            int index3 = cursor.getColumnIndex(com.example.group4_finalproject_iat359.Constants.STEPS);
 
             String km = cursor.getString(index1);
             String kcal = cursor.getString(index2);
-            String time = cursor.getString(index3);
-            String steps = cursor.getString(index4);
+            String steps = cursor.getString(index3);
 
-            buffer.append(km + " " + kcal + " " + time + " " + steps + "\n");
+            buffer.append(km + " " + kcal + " " +  " " + steps + "\n");
         }
         return buffer.toString();
     }
