@@ -331,7 +331,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //                mMap.addMarker(options);
 //            }
 //        }
-    }
+//    }
 
     private void hideSoftKeyboard(View v) {
         InputMethodManager imm =
