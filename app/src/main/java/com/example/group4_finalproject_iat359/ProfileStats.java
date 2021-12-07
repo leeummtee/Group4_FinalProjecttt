@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class ProfileStats extends MainActivity implements AdapterView.OnItemClickListener{
     RecyclerView myRecycler;
     MyDatabase db;
-    MyAdapter myAdapter;
-    MyHelper helper;
+    Adapter myAdapter;
+    Helper helper;
 
 
     @Override
@@ -29,7 +29,7 @@ public class ProfileStats extends MainActivity implements AdapterView.OnItemClic
         myRecycler = (RecyclerView) findViewById(R.id.recycler);
 
         db = new MyDatabase(this);
-        helper = new MyHelper(this);
+        helper = new Helper(this);
 
         SQLiteDatabase myDatabase = helper.getWritableDatabase();
 

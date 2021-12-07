@@ -18,4 +18,9 @@ public class TutorialOne extends AppCompatActivity {
         Intent intent= new Intent(this, com.example.group4_finalproject_iat359.TutorialTwo.class);
         startActivity(intent);
     }
+
+    public void goBack (View view) {
+        Intent intent = new Intent(this,com.example.group4_finalproject_iat359.Register.class );
+        startActivity(intent);
+    }
 }

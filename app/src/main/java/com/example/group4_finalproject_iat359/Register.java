@@ -46,8 +46,8 @@ public class Register extends Activity {
         //comparing the registered info with the inputted login info
         if (registeredPassword.equals(confirmPasswordEditText.getText().toString()))
         {
-            Toast.makeText(this, "Username and password saved to Preferences. Going to Login page", Toast.LENGTH_LONG).show();
-            Intent intent= new Intent(this, LoginActivity.class);
+            Toast.makeText(this, "Username and password saved to Preferences. Going to tutorial 1 page", Toast.LENGTH_LONG).show();
+            Intent intent= new Intent(this, TutorialOne.class);
             startActivity(intent);
         }
         else
