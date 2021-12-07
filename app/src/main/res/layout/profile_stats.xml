@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     android:background = "@color/black">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager" />
+
     <View
         android:id="@+id/rectangle_4"
         android:layout_width="412dp"

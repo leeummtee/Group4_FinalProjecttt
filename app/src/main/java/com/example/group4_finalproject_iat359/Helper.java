@@ -15,7 +15,6 @@ public class Helper extends SQLiteOpenHelper {
                     com.example.group4_finalproject_iat359.Constants.UID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     com.example.group4_finalproject_iat359.Constants.KM + " TEXT, " +
                     com.example.group4_finalproject_iat359.Constants.KCAL + " TEXT, " +
-                    com.example.group4_finalproject_iat359.Constants.TIME + " TEXT, " +
                     com.example.group4_finalproject_iat359.Constants.STEPS + " TEXT);" ;
 
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS " + com.example.group4_finalproject_iat359.Constants.TABLE_NAME;
@@ -39,8 +38,8 @@ public class Helper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         try {
             if (newVersion > oldVersion) {
-                db.execSQL("ALTER TABLE PLANSTABLE ADD COLUMN Location DEFAULT 0");
-                db.execSQL("ALTER TABLE PLANSTABLE ADD COLUMN LatinName DEFAULT 0");
+                db.execSQL("ALTER TABLE TRACKINGTABLE ADD COLUMN Location DEFAULT 0");
+                db.execSQL("ALTER TABLE TRACKINGTABLE ADD COLUMN LatinName DEFAULT 0");
             }
             db.execSQL(DROP_TABLE);
             onCreate(db);

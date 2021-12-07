@@ -156,6 +156,9 @@ public class GoalsActivity extends AppCompatActivity {
 //            }
 //        }
 
+//        goal = Integer.parseInt(stepGoalEditText.getText().toString());
+//        Toast.makeText(this, goal, Toast.LENGTH_SHORT).show();
+
         SharedPreferences sharedPrefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPrefs.edit();
 //        editor.putString("inputtedStepGoal", stepGoalEditText.getText().toString());
@@ -163,15 +166,13 @@ public class GoalsActivity extends AppCompatActivity {
         editor.putInt("inputtedStepGoal", goal);
         editor.commit();
 
-        //storing the goals in database
+        //adding the goal to database
 //        String name = plantName.getText().toString();
 //        String type = plantType.getText().toString();
 //        String plantLocation = location.getText().toString();
 //        String latinName = plantLatinName.getText().toString();
-//        Toast.makeText(this, name +  " " + type + " " + plantLocation + " " + latinName, Toast.LENGTH_SHORT).show();
-//        long id = db.insertData(goal);
+        Toast.makeText(this, goal, Toast.LENGTH_SHORT).show();
         long id = db.insertData(goal);
-
         if (id < 0)
         {
             Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show();
@@ -181,9 +182,16 @@ public class GoalsActivity extends AppCompatActivity {
             Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
         }
 
-        Toast.makeText(this, "Goals saved. Heading to the Tracking page.", Toast.LENGTH_LONG).show();
-        Intent intent= new Intent(this, com.example.group4_finalproject_iat359.MainActivity.class);
-        startActivity(intent);
+//        stepGoalEditText.setText("");
+//        plantName.setText("");
+//        plantType.setText("");
+//        location.setText("");
+//        plantLatinName.setText("");
+
+//        Toast.makeText(this, "Goals saved. Heading to the Tracking page.", Toast.LENGTH_LONG).show();
+//        Intent intent= new Intent(this, MainActivity.class);
+//        startActivity(intent);
+
     }
 
     public void goToHome(View v) {

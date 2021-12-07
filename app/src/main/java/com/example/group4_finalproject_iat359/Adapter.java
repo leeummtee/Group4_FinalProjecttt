@@ -55,7 +55,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
             kmTextView = (TextView) itemView.findViewById(R.id.kmEntry);
             kcalTextView = (TextView) itemView.findViewById(R.id.kcalEntry);
-            timeTextView = (TextView) itemView.findViewById(R.id.timeEntry);
             stepsTextView = (TextView) itemView.findViewById(R.id.stepsEntry);
 
             itemView.setOnClickListener(this);

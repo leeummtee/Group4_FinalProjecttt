@@ -21,7 +21,6 @@ public class ProfileStats extends MainActivity implements AdapterView.OnItemClic
     Adapter myAdapter;
     Helper helper;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,24 +34,24 @@ public class ProfileStats extends MainActivity implements AdapterView.OnItemClic
 
         Cursor cursor = db.getData();
 
-        int index1 = cursor.getColumnIndex(Constants.NAME);
-        int index2 = cursor.getColumnIndex(Constants.TYPE);
-        int index3 = cursor.getColumnIndex(Constants.LOCATION);
-        int index4 = cursor.getColumnIndex(Constants.LATIN_NAME);
+        int index1 = cursor.getColumnIndex(Constants.STEPS);
+//        int index2 = cursor.getColumnIndex(Constants.TYPE);
+//        int index3 = cursor.getColumnIndex(Constants.LOCATION);
+//        int index4 = cursor.getColumnIndex(Constants.LATIN_NAME);
 
         ArrayList<String> mArrayList = new ArrayList<String>();
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            String plantName = cursor.getString(index1);
-            String plantType = cursor.getString(index2);
-            String location = cursor.getString(index3);
-            String plantLatinName = cursor.getString(index4);
-            String s = plantName +", " + plantType +", " + location + "," + plantLatinName;
+            String stepsGoal = cursor.getString(index1);
+//            String plantType = cursor.getString(index2);
+//            String location = cursor.getString(index3);
+//            String plantLatinName = cursor.getString(index4);
+            String s = stepsGoal;
             mArrayList.add(s);
             cursor.moveToNext();
         }
 
-        myAdapter = new MyAdapter(mArrayList);
+        myAdapter = new Adapter(mArrayList);
         myRecycler.setAdapter(myAdapter);
         myRecycler.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -60,21 +59,9 @@ public class ProfileStats extends MainActivity implements AdapterView.OnItemClic
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         LinearLayout clickedRow = (LinearLayout) view;
-        TextView plantNameTextView = (TextView) view.findViewById(R.id.plantNameEntry);
-        TextView plantTypeTextView = (TextView) view.findViewById(R.id.plantTypeEntry);
-        TextView location = (TextView) view.findViewById(R.id.locationTypeEntry);
-        TextView latinName = (TextView) view.findViewById(R.id.plantLatinNameTypeEntry);
-        Toast.makeText(this, "row " + (1+position) + ":  " + plantNameTextView.getText() +" "+plantTypeTextView.getText() + " " + location.getText() + " " + latinName.getText(), Toast.LENGTH_LONG).show();
-    }
-
-
-    public void goToHome(View v){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    public void goToGoals(View v) {
-        Intent intent = new Intent(this, GoalsActivity.class);
-        startActivity(intent);
+        TextView stepsTextView = (TextView) view.findViewById(R.id.stepsEntry);
+        TextView kmTextView = (TextView) view.findViewById(R.id.kmEntry);
+        TextView kcalTextView = (TextView) view.findViewById(R.id.kcalEntry);
+        Toast.makeText(this, "row " + (1+position) + ":  " + stepsTextView.getText() +" "+kmTextView.getText() + " " + kcalTextView.getText(), Toast.LENGTH_LONG).show();
     }
 }

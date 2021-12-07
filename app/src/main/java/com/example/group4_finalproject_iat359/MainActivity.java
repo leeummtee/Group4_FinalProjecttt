@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     calTextView.setText(String.valueOf(stepCount/25)); //sets the value of the textview to the amount of calories burned
 
                     //in general, the average step is about 0.79m or 0.00079km
-//                    distanceTextView.setText(String.valueOf(stepCount * 0.0));
+                    distanceTextView.setText(String.valueOf(stepCount * 0.0));
                 }
             }
 
@@ -432,7 +432,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 //    public void endTrip (View view)
 //    {
-//        String name = plantName.getText().toString();
+//        String name = textViewStepCounter.getText().toString();
+//        String stepGoal = plantName.getText().toString();
 //        String type = plantType.getText().toString();
 //        String plantLocation = location.getText().toString();
 //        String latinName = plantLatinName.getText().toString();
@@ -446,9 +447,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 //        {
 //            Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
 //        }
-////        plantName.setText("");
-////        plantType.setText("");
-////        location.setText("");
-////        plantLatinName.setText("");
+//        plantName.setText("");
+//        plantType.setText("");
+//        location.setText("");
+//        plantLatinName.setText("");
 //    }
 }
