@@ -20,7 +20,7 @@
     <ImageView
         android:layout_width="138dp"
         android:layout_height="192dp"
-        android:src="@drawable/ic_baseline_directions_run_24"
+        android:src="@drawable/ic_baseline_transfer_within_a_station_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
