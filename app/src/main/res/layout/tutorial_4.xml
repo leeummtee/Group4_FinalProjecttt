@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/black"
     android:layout_height="match_parent">
@@ -15,6 +16,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.061" />
+
+    <ImageView
+        android:layout_width="138dp"
+        android:layout_height="192dp"
+        android:src="@drawable/ic_baseline_directions_run_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.595" />
 
     <TextView
         android:id="@+id/textView3"
@@ -45,15 +57,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-
-
     <Button
         android:id="@+id/button2"
-        android:layout_width="133dp"
-        android:layout_height="49dp"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
         android:fontFamily="@font/montserrat_regular"
         android:onClick="tutButton"
-        android:text="Next"
+        android:text="Get Movin' Champ"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
