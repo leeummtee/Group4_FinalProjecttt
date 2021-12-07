@@ -14,13 +14,25 @@ public class MyDatabase {
         helper = new Helper(context);
     }
 
-    public long insertData (String km, String kcal, String time, String steps)
+//    public long insertData (String km, String kcal, String time, String steps)
+//    {
+//        SQLiteDatabase db = helper.getWritableDatabase();
+//        ContentValues contentValues = new ContentValues();
+//        contentValues.put(Constants.KM, km);
+//        contentValues.put(Constants.KCAL, kcal);
+//        contentValues.put(Constants.TIME, time);
+//        contentValues.put(Constants.STEPS, steps);
+//        long id = db.insert(Constants.TABLE_NAME, null, contentValues);
+//        return id;
+//    }
+
+    public long insertData (Integer steps)
     {
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(Constants.KM, km);
-        contentValues.put(Constants.KCAL, kcal);
-        contentValues.put(Constants.TIME, time);
+//        contentValues.put(Constants.KM, km);
+//        contentValues.put(Constants.KCAL, kcal);
+//        contentValues.put(Constants.TIME, time);
         contentValues.put(Constants.STEPS, steps);
         long id = db.insert(Constants.TABLE_NAME, null, contentValues);
         return id;

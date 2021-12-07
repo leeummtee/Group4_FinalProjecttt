@@ -38,6 +38,9 @@ public class GoalsActivity extends AppCompatActivity {
         setContentView(R.layout.goals);
         stepGoalEditText = (EditText)findViewById(R.id.stepGoalEditText);
         destinationEditText = (EditText)findViewById(R.id.destinationEditText);
+        db = new MyDatabase(this);
+
+
     }
 
     //searching for destination
@@ -166,7 +169,9 @@ public class GoalsActivity extends AppCompatActivity {
 //        String plantLocation = location.getText().toString();
 //        String latinName = plantLatinName.getText().toString();
 //        Toast.makeText(this, name +  " " + type + " " + plantLocation + " " + latinName, Toast.LENGTH_SHORT).show();
+//        long id = db.insertData(goal);
         long id = db.insertData(goal);
+
         if (id < 0)
         {
             Toast.makeText(this, "fail", Toast.LENGTH_SHORT).show();
